@@ -8,7 +8,6 @@ public class EX016 {
 
         int N = sc.nextInt();
 
-
         for (double i=1; i <= 5; i++) {
 
             double quadrado, cubo;
@@ -16,8 +15,6 @@ public class EX016 {
             System.out.printf("%.0f %.0f %.0f%n", i, quadrado = Math.pow(i, 2.0), cubo = Math.pow(i, 3.0));
 
         }
-
-
         sc.close();
     }
 
