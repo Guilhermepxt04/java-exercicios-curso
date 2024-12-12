@@ -4,6 +4,11 @@ public class AulaFor {
 
     public static void main(String[] args) {
 
+        /*
+        Aula sobre estrutura de repetição For
+        */
+
+
         Scanner sc = new Scanner(System.in);
 
         int N = sc.nextInt();

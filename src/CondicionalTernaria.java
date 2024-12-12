@@ -4,6 +4,10 @@ public class CondicionalTernaria {
 
     public static void main(String[] args) {
 
+        /*
+        Aula sobre Estrutura de decisao condicional ternaria
+        */
+
         Scanner sc = new Scanner(System.in);
 
         double preco;

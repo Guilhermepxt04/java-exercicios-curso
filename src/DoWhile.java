@@ -5,6 +5,10 @@ public class DoWhile {
 
     public static void main(String[] args) {
 
+        /*
+        Aula sobre estrutura de repetição While
+        */
+
         Scanner sc = new Scanner(System.in);
         Locale.setDefault(Locale.US);
 
