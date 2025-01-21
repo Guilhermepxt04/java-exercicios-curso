@@ -23,21 +23,23 @@ public class StorageService {
         System.out.print("quantity in stock: ");
         product.quantity = sc.nextInt();
 
-        System.out.printf("Product data: %s, $ %.2f, %d, Total: $ %.2f%n ", product.name, product.price, product.quantity, product.totalValueInStock());
+        System.out.println("Product data: " + product);
 
 
         System.out.print("Enter the number of products to be added in stock: ");
+
         int add = sc.nextInt();
         product.addProducts(add);
 
-        System.out.printf("Updated data: %s, $ %.2f, %d, Total: $ %.2f%n ", product.name, product.price, product.quantity, product.totalValueInStock());
+        System.out.println("Updated data: " + product );
 
 
         System.out.print("Enter the number of products to be removed from stock: ");
+
         int remove = sc.nextInt();
         product.removeProducts(remove);
 
-        System.out.printf("Updated data: %s, $ %.2f, %d, Total: $ %.2f%n ", product.name, product.price, product.quantity, product.totalValueInStock() );
+        System.out.println("Updated data: " + product);
 
 
         sc.close();
