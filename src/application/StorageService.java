@@ -10,18 +10,15 @@ public class StorageService {
 
         Scanner sc = new Scanner(System.in);
         Locale.setDefault(Locale.US);
-        Product product;
-
-        product = new Product();
 
         System.out.println(("Enter product data: "));
 
         System.out.print("Name: ");
-        product.name = sc.nextLine();
+        String name = sc.nextLine();
         System.out.print("Price: ");
-        product.price = sc.nextDouble();
-        System.out.print("quantity in stock: ");
-        product.quantity = sc.nextInt();
+        double price = sc.nextDouble();
+
+        Product product = new Product(name, price);
 
         System.out.println("Product data: " + product);
 
