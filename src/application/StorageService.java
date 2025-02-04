@@ -20,7 +20,10 @@ public class StorageService {
 
         Product product = new Product(name, price);
 
+        product.setName("Computer");
+
         System.out.println("Product data: " + product);
+        System.out.printf("Update name: %s%n", product.getName());
 
 
         System.out.print("Enter the number of products to be added in stock: ");
