@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Locale;
 import entities.Product;
@@ -25,6 +26,8 @@ public class AulaVetores {
         for (int i=0; i<vect.length; i++) {
             sum += vect[i].getPrice();
         }
+
+        System.out.println(Arrays.toString(vect));
 
         double average = sum / n;
         System.out.printf("AVERAGE PRICE = %.2f%n", average);
