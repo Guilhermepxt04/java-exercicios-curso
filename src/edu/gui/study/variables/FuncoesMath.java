@@ -1,3 +1,5 @@
+package edu.gui.study.variables;
+
 public class FuncoesMath {
 
         public static void main(String[] args) {
