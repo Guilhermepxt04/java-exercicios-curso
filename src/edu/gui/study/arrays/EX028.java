@@ -41,7 +41,7 @@ public class EX028 {
 
         for (int[] numero : matriz) {
             System.out.println(" ");
-            for (int j = 0; j < matriz.length; j++) {
+            for (int j = 0; j < numero.length; j++) {
 
                 System.out.print(numero[j] + " ");
             }
