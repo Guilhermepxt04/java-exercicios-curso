@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.Locale;
 import edu.gui.study.poo.entities.Product;
 
-public class AulaVetores {
+public class AulaArrays {
 
     public static void main(String[] args) {
 
