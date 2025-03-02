@@ -2,6 +2,8 @@ package edu.gui.study.enumeracao.entities;
 
 
 import java.time.Month;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Worker {
 
@@ -10,6 +12,7 @@ public class Worker {
     private WorkerLevel level;
     private Double baseSalary;
     private Department department;
+    private List<HourContract> contracts = new ArrayList<>();
 
     //Construtores
     public Worker(String name, WorkerLevel level, Double baseSalary, Department department) {
@@ -31,17 +34,31 @@ public class Worker {
         return name;
     }
 
-    //Metodos
-    public void addContract () {
-
+    public List<HourContract> getContracts() {
+        return contracts;
     }
 
-    public void removeContract () {
+    //Metodos
+    public void addContract (HourContract contract) {
+        contracts.add(contract);
+    }
 
+    public void removeContract (HourContract contract) {
+        contracts.remove(contract);
     }
 
     public Double income(Month month, int year) {
-        return 0.00;
+
+        Double valuePerContract = 0.00;
+        for (HourContract contract : contracts) {
+
+            if (contract.getDate().getMonth() == month && contract.getDate().getYear() == year) {
+
+                valuePerContract += contract.totalValue();
+
+            }
+        }
+        return baseSalary + valuePerContract;
     }
 
     @Override

@@ -8,8 +8,6 @@ import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import java.util.Locale;
 
@@ -24,8 +22,6 @@ public class SalaryMonth {
     public static void main(String [] args) throws ParseException {
 
         Scanner sc = new Scanner(System.in).useLocale(Locale.US);
-        List<HourContract> listContracts = new ArrayList<>();
-        List<HourContract> contractsMonthIncome = new ArrayList<>();
         double valuePerContract = 0.00;
 
         System.out.print("Enter department's name: ");
@@ -65,7 +61,7 @@ public class SalaryMonth {
             Integer duration = sc.nextInt();
 
             HourContract contract = new HourContract(date, valuePerHour, duration);
-            listContracts.add(contract);
+            worker.addContract(contract);
 
         }
 
@@ -74,22 +70,10 @@ public class SalaryMonth {
         sc.nextLine();
         YearMonth monthIncome = YearMonth.parse(sc.nextLine(), fmt2);
 
-        for (HourContract contract : listContracts) {
-            if (contract.getDate().getMonth() == monthIncome.getMonth() && contract.getDate().getYear() == monthIncome.getYear()) {
-                contractsMonthIncome.add(contract);
-            }
-        }
-
-        for (HourContract contract : contractsMonthIncome) {
-
-            valuePerContract += contract.getValuePerHour() * contract.getHours();
-
-        }
-
 
         System.out.println("Name: " + worker.getName());
         System.out.println(department);
-        System.out.println("Income for " + monthIncome + ": " + (String.format("%.2f", (worker.getBaseSalary() + valuePerContract))));
+        System.out.println("Income for " + monthIncome + ": " + (String.format("%.2f", worker.income(monthIncome.getMonth(), monthIncome.getYear()))));
 
 
         sc.close();

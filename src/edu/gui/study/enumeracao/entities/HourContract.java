@@ -8,6 +8,7 @@ public class HourContract {
     private Double valuePerHour;
     private Integer hours;
 
+    //Construtores
     public HourContract(LocalDate date, Double valuePerHour, Integer hours) {
         this.date = date;
         this.valuePerHour = valuePerHour;
@@ -17,12 +18,8 @@ public class HourContract {
     public HourContract() {
     }
 
-    public Double totalValue() {
 
-        return valuePerHour * hours;
-
-    }
-
+    //Getters e Setters
     public LocalDate getDate() {
         return date;
     }
@@ -41,6 +38,13 @@ public class HourContract {
 
     public void setHours(Integer hours) {
         this.hours = hours;
+    }
+
+    //Metodos
+    public Double totalValue() {
+
+        return valuePerHour * hours;
+
     }
 
     @Override
