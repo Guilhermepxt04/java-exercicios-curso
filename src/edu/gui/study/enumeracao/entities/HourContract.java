@@ -1,14 +1,14 @@
 package edu.gui.study.enumeracao.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class HourContract {
 
-    private Date date;
+    private LocalDate date;
     private Double valuePerHour;
     private Integer hours;
 
-    public HourContract(Date date, Double valuePerHour, Integer hours) {
+    public HourContract(LocalDate date, Double valuePerHour, Integer hours) {
         this.date = date;
         this.valuePerHour = valuePerHour;
         this.hours = hours;
@@ -18,5 +18,14 @@ public class HourContract {
 
         return valuePerHour * hours;
 
+    }
+
+    @Override
+    public String toString() {
+        return "HourContract{" +
+                "date=" + date +
+                ", valuePerHour=" + valuePerHour +
+                ", hours=" + hours +
+                '}';
     }
 }

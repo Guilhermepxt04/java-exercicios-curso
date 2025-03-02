@@ -1,6 +1,11 @@
 package edu.gui.study.enumeracao.entities;
 
 
+import java.time.Month;
+import java.time.Year;
+import java.time.YearMonth;
+import edu.gui.study.enumeracao.entities.HourContract;
+
 public class Worker {
 
     //Atributos
@@ -22,6 +27,10 @@ public class Worker {
         return baseSalary;
     }
 
+    public String getName() {
+        return name;
+    }
+
     //Metodos
     public void addContract () {
 
@@ -31,6 +40,10 @@ public class Worker {
 
     }
 
+    public Double income(Month month, int year) {
+
+        return 0.00;
+    }
 
     @Override
     public String toString() {
@@ -41,4 +54,5 @@ public class Worker {
                 ", department=" + department +
                 '}';
     }
+
 }

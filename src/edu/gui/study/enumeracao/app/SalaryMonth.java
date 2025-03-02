@@ -1,14 +1,17 @@
 package edu.gui.study.enumeracao.app;
 
 import edu.gui.study.enumeracao.entities.Department;
+import edu.gui.study.enumeracao.entities.HourContract;
 import edu.gui.study.enumeracao.entities.Worker;
 import edu.gui.study.enumeracao.entities.WorkerLevel;
 
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
+import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Locale;
 
@@ -23,6 +26,8 @@ public class SalaryMonth {
     public static void main(String [] args) throws ParseException {
 
         Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+        List<HourContract> listContracts = new ArrayList<>();
+
 
         System.out.print("Enter department's name: ");
         String nameDepartment = sc.nextLine();
@@ -52,11 +57,30 @@ public class SalaryMonth {
             System.out.printf("Enter contract #%d data: %n", i + 1);
             System.out.print("Date (DD/MM/YYYY): ");
             sc.nextLine();
-            String date = sc.nextLine();
-            SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
-            Date dateContract = formatoData.parse(date);
-            System.out.println(dateContract);
+            DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate date = LocalDate.parse(sc.nextLine(), fmt1);
+
+            System.out.print("Value per hour: ");
+            Double valuePerHour = sc.nextDouble();
+
+            System.out.print("Duration: (hours)");
+            Integer duration = sc.nextInt();
+
+            HourContract contract = new HourContract(date, valuePerHour, duration);
+            listContracts.add(contract);
+
         }
 
+        System.out.print("Enter month and year to calculate income (MM/YYYY): ");
+        DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("MM/yyyy");
+        sc.nextLine();
+        YearMonth mounthIncome = YearMonth.parse(sc.nextLine(), fmt2);
+
+        System.out.println("Name: " + worker.getName());
+        System.out.println(department);
+        System.out.println("Income for 08/2018: " + worker.income(mounthIncome.getMonth(), mounthIncome.getYear()));
+
+
+        sc.close();
     }
 }
