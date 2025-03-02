@@ -38,6 +38,10 @@ public class Worker {
         return contracts;
     }
 
+    public Department getDepartment() {
+        return department;
+    }
+
     //Metodos
     public void addContract (HourContract contract) {
         contracts.add(contract);

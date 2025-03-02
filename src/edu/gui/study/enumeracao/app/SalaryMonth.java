@@ -57,7 +57,7 @@ public class SalaryMonth {
             System.out.print("Value per hour: ");
             Double valuePerHour = sc.nextDouble();
 
-            System.out.print("Duration: (hours)");
+            System.out.print("Duration (hours): ");
             Integer duration = sc.nextInt();
 
             HourContract contract = new HourContract(date, valuePerHour, duration);
@@ -72,7 +72,7 @@ public class SalaryMonth {
 
 
         System.out.println("Name: " + worker.getName());
-        System.out.println(department);
+        System.out.println("Department: " + worker.getDepartment().getName());
         System.out.println("Income for " + monthIncome + ": " + (String.format("%.2f", worker.income(monthIncome.getMonth(), monthIncome.getYear()))));
 
 

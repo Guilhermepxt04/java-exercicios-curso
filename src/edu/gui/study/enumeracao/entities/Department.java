@@ -11,6 +11,10 @@ public class Department {
     public Department() {
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "Department: " + name ;
