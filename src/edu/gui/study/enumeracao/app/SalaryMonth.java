@@ -25,7 +25,7 @@ public class SalaryMonth {
 
         Scanner sc = new Scanner(System.in).useLocale(Locale.US);
         List<HourContract> listContracts = new ArrayList<>();
-        List<HourContract> contractsMounthIncome = new ArrayList<>();
+        List<HourContract> contractsMonthIncome = new ArrayList<>();
         double valuePerContract = 0.00;
 
         System.out.print("Enter department's name: ");
@@ -72,15 +72,15 @@ public class SalaryMonth {
         System.out.print("Enter month and year to calculate income (MM/YYYY): ");
         DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("MM/yyyy");
         sc.nextLine();
-        YearMonth mounthIncome = YearMonth.parse(sc.nextLine(), fmt2);
+        YearMonth monthIncome = YearMonth.parse(sc.nextLine(), fmt2);
 
         for (HourContract contract : listContracts) {
-            if (contract.getDate().getMonth() == mounthIncome.getMonth() && contract.getDate().getYear() == mounthIncome.getYear()) {
-                contractsMounthIncome.add(contract);
+            if (contract.getDate().getMonth() == monthIncome.getMonth() && contract.getDate().getYear() == monthIncome.getYear()) {
+                contractsMonthIncome.add(contract);
             }
         }
 
-        for (HourContract contract : contractsMounthIncome) {
+        for (HourContract contract : contractsMonthIncome) {
 
             valuePerContract += contract.getValuePerHour() * contract.getHours();
 
@@ -89,7 +89,7 @@ public class SalaryMonth {
 
         System.out.println("Name: " + worker.getName());
         System.out.println(department);
-        System.out.println("Income for " + mounthIncome + ": " + (String.format("%.2f", (worker.getBaseSalary() + valuePerContract))));
+        System.out.println("Income for " + monthIncome + ": " + (String.format("%.2f", (worker.getBaseSalary() + valuePerContract))));
 
 
         sc.close();
