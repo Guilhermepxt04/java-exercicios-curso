@@ -2,9 +2,6 @@ package edu.gui.study.enumeracao.entities;
 
 
 import java.time.Month;
-import java.time.Year;
-import java.time.YearMonth;
-import edu.gui.study.enumeracao.entities.HourContract;
 
 public class Worker {
 
@@ -14,12 +11,15 @@ public class Worker {
     private Double baseSalary;
     private Department department;
 
-    //Construtor
+    //Construtores
     public Worker(String name, WorkerLevel level, Double baseSalary, Department department) {
         this.name = name;
         this.level = level;
         this.baseSalary = baseSalary;
         this.department = department;
+    }
+
+    public Worker() {
     }
 
     //Getters e Setters
@@ -41,7 +41,6 @@ public class Worker {
     }
 
     public Double income(Month month, int year) {
-
         return 0.00;
     }
 

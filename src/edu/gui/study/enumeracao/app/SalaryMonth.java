@@ -4,8 +4,6 @@ import edu.gui.study.enumeracao.entities.Department;
 import edu.gui.study.enumeracao.entities.HourContract;
 import edu.gui.study.enumeracao.entities.Worker;
 import edu.gui.study.enumeracao.entities.WorkerLevel;
-
-
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.YearMonth;
@@ -27,7 +25,8 @@ public class SalaryMonth {
 
         Scanner sc = new Scanner(System.in).useLocale(Locale.US);
         List<HourContract> listContracts = new ArrayList<>();
-
+        List<HourContract> contractsMounthIncome = new ArrayList<>();
+        double valuePerContract = 0.00;
 
         System.out.print("Enter department's name: ");
         String nameDepartment = sc.nextLine();
@@ -47,7 +46,6 @@ public class SalaryMonth {
 
         Worker worker = new Worker(nameWorker, workerLevel, baseSalary, department);
 
-        System.out.println(worker);
 
         System.out.print("How many contracts to this worker? ");
         int n = sc.nextInt();
@@ -76,9 +74,22 @@ public class SalaryMonth {
         sc.nextLine();
         YearMonth mounthIncome = YearMonth.parse(sc.nextLine(), fmt2);
 
+        for (HourContract contract : listContracts) {
+            if (contract.getDate().getMonth() == mounthIncome.getMonth() && contract.getDate().getYear() == mounthIncome.getYear()) {
+                contractsMounthIncome.add(contract);
+            }
+        }
+
+        for (HourContract contract : contractsMounthIncome) {
+
+            valuePerContract += contract.getValuePerHour() * contract.getHours();
+
+        }
+
+
         System.out.println("Name: " + worker.getName());
         System.out.println(department);
-        System.out.println("Income for 08/2018: " + worker.income(mounthIncome.getMonth(), mounthIncome.getYear()));
+        System.out.println("Income for " + mounthIncome + ": " + (String.format("%.2f", (worker.getBaseSalary() + valuePerContract))));
 
 
         sc.close();
