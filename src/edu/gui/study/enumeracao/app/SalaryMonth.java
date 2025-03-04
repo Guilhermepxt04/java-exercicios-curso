@@ -22,7 +22,6 @@ public class SalaryMonth {
     public static void main(String [] args) throws ParseException {
 
         Scanner sc = new Scanner(System.in).useLocale(Locale.US);
-        double valuePerContract = 0.00;
 
         System.out.print("Enter department's name: ");
         String nameDepartment = sc.nextLine();
