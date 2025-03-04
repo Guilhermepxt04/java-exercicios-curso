@@ -2,7 +2,6 @@ package edu.gui.study.enumeracao.app;
 
 import edu.gui.study.enumeracao.entities.Comment;
 import edu.gui.study.enumeracao.entities.Post;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
