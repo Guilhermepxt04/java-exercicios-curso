@@ -34,13 +34,11 @@ public class Shop {
         String status = sc.nextLine();
         OrderStatus orderStatus = OrderStatus.valueOf(status);
 
-        LocalDateTime date = LocalDateTime.now();
-        String formattedDate = date.format(fmt2);
-        date = LocalDateTime.parse(formattedDate, fmt2);
+        LocalDateTime momment = LocalDateTime.now();
 
-        Order order = new Order(date, orderStatus);
 
-        System.out.println(order);
+        Order order = new Order(momment, orderStatus);
+
 
         System.out.print("How many items to this order? ");
         int n = sc.nextInt();
@@ -62,12 +60,22 @@ public class Shop {
             Product product = new Product(productName, productPrice);
             OrderItem orderItem = new OrderItem(quantity, productPrice);
 
+            orderItem.addProduct(product);
             order.addItem(orderItem);
-            System.out.println(order.getItems());
-
         }
 
-        System.out.printf("%.2f%n", order.total());
+
+        System.out.println("ORDER SUMMARY: ");
+        System.out.println("Order moment: " + order.getMoment());
+        System.out.println("Order status: " + order.getStatus());
+        System.out.println(client);
+        System.out.println("Order items: ");
+        for (OrderItem item : order.getItems()) {
+            for (Product p : item.getProducts()) {
+                System.out.println(p.getName() + ", Quantity: " + item.getQuantity() + ", Subtotal: " + String.format("%.2f", item.subTotal()));
+            }
+        }
+        System.out.printf("Total price: %.2f%n", order.total());
     }
 
 }

@@ -1,10 +1,14 @@
 package edu.gui.study.enumeracao.entities;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OrderItem {
 
     private Integer quantity;
     private Double price;
+    private List<Product> products = new ArrayList<>();
 
     public OrderItem() {}
 
@@ -17,24 +21,23 @@ public class OrderItem {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
 
     public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+
+    public List<Product> getProducts() {
+        return products;
     }
 
     public Double subTotal() {
         return quantity * price ;
     }
 
-    @Override
-    public String toString() {
-        return "OrderItem: " +  " / "+ price;
+    public void addProduct(Product product) {
+        products.add(product);
     }
+
+
 }

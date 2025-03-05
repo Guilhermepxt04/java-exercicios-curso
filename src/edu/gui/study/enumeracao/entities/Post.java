@@ -25,25 +25,6 @@ public class Post {
         this.likes = likes;
     }
 
-    public Date getMoment() {
-        return moment;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public Integer getLikes() {
-        return likes;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public List<Comment> getComments() {
-        return comments;
-    }
 
     public void addComment(Comment comment) {
         comments.add(comment);
