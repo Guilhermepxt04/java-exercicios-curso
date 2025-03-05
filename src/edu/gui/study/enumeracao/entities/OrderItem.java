@@ -8,11 +8,12 @@ public class OrderItem {
 
     private Integer quantity;
     private Double price;
-    private List<Product> products = new ArrayList<>();
+    private String productName;
 
     public OrderItem() {}
 
-    public OrderItem(Integer quantity, Double price) {
+    public OrderItem(String ProductName, Integer quantity, Double price) {
+        this.productName = ProductName;
         this.quantity = quantity;
         this.price = price;
     }
@@ -26,18 +27,12 @@ public class OrderItem {
         return price;
     }
 
-
-    public List<Product> getProducts() {
-        return products;
+    public String getProductName() {
+        return productName;
     }
+
 
     public Double subTotal() {
         return quantity * price ;
     }
-
-    public void addProduct(Product product) {
-        products.add(product);
-    }
-
-
 }

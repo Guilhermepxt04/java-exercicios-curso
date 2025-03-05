@@ -13,8 +13,8 @@ public class Shop {
     public static void main(String [] args) {
 
         Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+        Locale.setDefault(Locale.US);
         DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
 
         System.out.println("Enter client data:");
@@ -58,9 +58,8 @@ public class Shop {
             Integer quantity = sc.nextInt();
 
             Product product = new Product(productName, productPrice);
-            OrderItem orderItem = new OrderItem(quantity, productPrice);
+            OrderItem orderItem = new OrderItem(productName, quantity, productPrice);
 
-            orderItem.addProduct(product);
             order.addItem(orderItem);
         }
 
@@ -71,11 +70,11 @@ public class Shop {
         System.out.println(client);
         System.out.println("Order items: ");
         for (OrderItem item : order.getItems()) {
-            for (Product p : item.getProducts()) {
-                System.out.println(p.getName() + ", Quantity: " + item.getQuantity() + ", Subtotal: " + String.format("%.2f", item.subTotal()));
-            }
+                System.out.println(item.getProductName() + ", Quantity: " + item.getQuantity() + ", Subtotal: " + String.format("%.2f", item.subTotal()));
         }
         System.out.printf("Total price: %.2f%n", order.total());
+
+        sc.close();
     }
 
 }
