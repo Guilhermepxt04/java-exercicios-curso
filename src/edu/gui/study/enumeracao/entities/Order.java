@@ -1,35 +1,28 @@
 package edu.gui.study.enumeracao.entities;
 
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Order {
 
-    private Date moment;
+    private LocalDateTime moment;
     private OrderStatus status;
     private List<OrderItem> items = new ArrayList<>();
 
     public Order() {
     }
 
-    public Order(Date moment, OrderStatus status) {
+    public Order(LocalDateTime moment, OrderStatus status) {
         this.moment = moment;
         this.status = status;
     }
 
-    public Date getMoment() {
-        return moment;
+    public List<OrderItem> getItems() {
+        return items;
     }
 
-    public OrderStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(OrderStatus status) {
-        this.status = status;
-    }
 
     public void addItem(OrderItem item) {
         items.add(item);
@@ -43,9 +36,14 @@ public class Order {
 
         Double totalPrice = 0.0;
         for (OrderItem item : items) {
-            totalPrice += item.getPrice();
+            totalPrice += item.getPrice() * item.getQuantity();
         }
-
         return totalPrice;
     }
+
+    @Override
+    public String toString() {
+        return "Order: " + moment + " - " + status;
+    }
+
 }

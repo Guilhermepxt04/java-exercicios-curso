@@ -1,5 +1,6 @@
 package edu.gui.study.enumeracao.entities;
 
+
 public class OrderItem {
 
     private Integer quantity;
@@ -30,5 +31,10 @@ public class OrderItem {
 
     public Double subTotal() {
         return quantity * price ;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderItem: " +  " / "+ price;
     }
 }
