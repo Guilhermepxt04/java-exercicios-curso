@@ -1,22 +1,21 @@
 package edu.gui.study.enumeracao.entities;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class OrderItem {
 
     private Integer quantity;
     private Double price;
-    private String productName;
+
+    private Product product;
 
     public OrderItem() {}
 
-    public OrderItem(String ProductName, Integer quantity, Double price) {
-        this.productName = ProductName;
+    public OrderItem(Product product, Integer quantity, Double price) {
+        this.product = product;
         this.quantity = quantity;
         this.price = price;
     }
+
 
     public Integer getQuantity() {
         return quantity;
@@ -28,7 +27,7 @@ public class OrderItem {
     }
 
     public String getProductName() {
-        return productName;
+        return product.getName();
     }
 
 

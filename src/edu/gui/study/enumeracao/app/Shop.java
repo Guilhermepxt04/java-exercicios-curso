@@ -58,7 +58,7 @@ public class Shop {
             Integer quantity = sc.nextInt();
 
             Product product = new Product(productName, productPrice);
-            OrderItem orderItem = new OrderItem(productName, quantity, productPrice);
+            OrderItem orderItem = new OrderItem(product, quantity, productPrice);
 
             order.addItem(orderItem);
         }
