@@ -1,8 +1,8 @@
-package edu.gui.study.heranca.app;
+package edu.gui.study.herancaEpolimorfismo.app;
 
-import edu.gui.study.heranca.entities.Account;
-import edu.gui.study.heranca.entities.BusinessAccount;
-import edu.gui.study.heranca.entities.SavingsAccount;
+import edu.gui.study.herancaEpolimorfismo.entities.Account;
+import edu.gui.study.herancaEpolimorfismo.entities.BusinessAccount;
+import edu.gui.study.herancaEpolimorfismo.entities.SavingsAccount;
 
 public class Program {
 

@@ -1,4 +1,4 @@
-package edu.gui.study.heranca.entities;
+package edu.gui.study.herancaEpolimorfismo.entities;
 
 public class SavingsAccount extends Account {
 
