@@ -9,7 +9,8 @@ public class OutsourcedEmployee extends Employee {
         this.additional = additional;
     }
 
-    public Double additionalCharge () {
+    @Override
+    public Double payment() {
         return super.payment() + (this.additional / 100 * 110);
     }
 }

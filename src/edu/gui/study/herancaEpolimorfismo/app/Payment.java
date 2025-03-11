@@ -53,12 +53,7 @@ public class Payment {
 
         for (Employee employee : employees) {
 
-            if (employee instanceof OutsourcedEmployee) {
-                System.out.println(employee.getName() + " - " + " $ " + String.format("%.2f", ((OutsourcedEmployee) employee).additionalCharge()));
-            }
-            else {
-                System.out.println(employee.getName() + " - " + " $ " + String.format("%.2f", employee.payment()));
-            }
+            System.out.println(employee.getName() + " - " + " $ " + String.format("%.2f", employee.payment()));
         }
     }
 }
