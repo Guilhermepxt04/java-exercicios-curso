@@ -1,6 +1,8 @@
 package edu.gui.study.enumeracao.entities;
 
 
+import edu.gui.study.enumeracao.entities.enums.OrderStatus;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;

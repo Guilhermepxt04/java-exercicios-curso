@@ -1,4 +1,4 @@
-package edu.gui.study.enumeracao.entities;
+package edu.gui.study.enumeracao.entities.enums;
 
 public enum WorkerLevel {
 

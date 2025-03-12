@@ -3,7 +3,7 @@ package edu.gui.study.enumeracao.app;
 import edu.gui.study.enumeracao.entities.Department;
 import edu.gui.study.enumeracao.entities.HourContract;
 import edu.gui.study.enumeracao.entities.Worker;
-import edu.gui.study.enumeracao.entities.WorkerLevel;
+import edu.gui.study.enumeracao.entities.enums.WorkerLevel;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.YearMonth;

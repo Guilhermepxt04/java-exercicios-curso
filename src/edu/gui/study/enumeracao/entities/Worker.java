@@ -1,6 +1,8 @@
 package edu.gui.study.enumeracao.entities;
 
 
+import edu.gui.study.enumeracao.entities.enums.WorkerLevel;
+
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
