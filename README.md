@@ -1,7 +1,7 @@
 
 #  Curso de java
 
- Este repositório possui todos exercicios e algumas aulas anotadas do curso de java do professor Nelio Alves
+ Este repositório possui todos exercicios e algumas aulas anotadas do curso de java do professor Nélio Alves
 
 
 
