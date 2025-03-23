@@ -15,8 +15,8 @@ public class Program {
         try (Scanner sc = new Scanner(System.in)){
 
             System.out.print("Enter a csv path: ");
-            String strSourcefile = sc.nextLine();
-            File sourceFile = new File(strSourcefile);
+            String strSourceFile = sc.nextLine();
+            File sourceFile = new File(strSourceFile);
 
             String sourceFolder = sourceFile.getParent();
 
