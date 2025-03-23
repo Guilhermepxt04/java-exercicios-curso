@@ -15,12 +15,14 @@ public class Program {
         try (Scanner sc = new Scanner(System.in)){
 
             System.out.print("Enter a csv path: ");
-            String strPath = sc.nextLine();
-            File path = new File(strPath);
+            String strSourcefile = sc.nextLine();
+            File sourceFile = new File(strSourcefile);
 
-            new File( "C:\\teste\\out").mkdir();
+            String sourceFolder = sourceFile.getParent();
 
-            try (BufferedReader br = new BufferedReader(new FileReader(path))){
+            new File(sourceFolder + " \\out").mkdir();
+
+            try (BufferedReader br = new BufferedReader(new FileReader(sourceFile))){
 
                     String line = br.readLine();
 
@@ -32,8 +34,7 @@ public class Program {
                         Double price = Double.parseDouble(parts[1]);
                         Integer quantity = Integer.parseInt(parts[2]);
 
-                        Product product = new Product(name, price, quantity);
-                        products.add(product);
+                        products.add(new Product(name, price, quantity));
 
                         line = br.readLine();
                     }
@@ -49,6 +50,9 @@ public class Program {
                 bw.write(p.getName() + ";" + String.format("%.2f", p.getPrice()) + ";" + String.format("%.2f", p.totalPrice()));
                 bw.newLine();
             }
+
+            System.out.println("SUMMARY CREATED");
+
         } catch (IOException e) {
             System.out.println("Error writer file: " + e.getMessage());
         }
