@@ -13,7 +13,7 @@
 
 ## Aprendizado
 
-- Toda estrutura e sintaxe básica do Java
+- Toda estrutura, sintaxe e convenções do Java 
 - POO (Programação orientada a objetos)
 - JDBC
 - JPA
