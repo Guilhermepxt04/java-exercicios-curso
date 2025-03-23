@@ -1,7 +1,6 @@
 package edu.gui.study.arquivos;
 
 import java.io.*;
-import java.nio.BufferOverflowException;
 import java.util.Scanner;
 
 public class AulaLendoArquivos {
@@ -14,7 +13,6 @@ public class AulaLendoArquivos {
 
         try (BufferedReader br = new BufferedReader(new FileReader(path))){
 
-
             String line = br.readLine();
 
             while (line != null) {
@@ -26,7 +24,9 @@ public class AulaLendoArquivos {
             System.out.println("Error: " + e.getMessage());;
         }
 
+
         System.out.println("-----------------------");
+
 
 
         try {

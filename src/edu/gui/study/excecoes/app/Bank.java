@@ -10,10 +10,8 @@ public class Bank {
 
     public static void main(String [] args) {
 
-        Scanner sc = new Scanner(System.in).useLocale(Locale.US);
-        Locale.setDefault(Locale.US);
-
-        try {
+        try (Scanner sc = new Scanner(System.in).useLocale(Locale.US)) {
+            Locale.setDefault(Locale.US);
 
             System.out.println("Enter account data");
 
@@ -38,8 +36,6 @@ public class Bank {
             account.withdraw(withDraw);
         } catch (DomainAccountException e) {
             System.out.println("Withdraw error: " + e.getMessage());
-        } finally {
-            sc.close();
         }
 
     }
