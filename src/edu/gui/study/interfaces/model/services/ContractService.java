@@ -19,7 +19,8 @@ public class ContractService {
 
             LocalDate dueDate = contract.getDate().plusMonths(i);
 
-            contract.setInstallment(new Installment(dueDate, onlinePaymentService.paymentFee(contract.getValueTotal()) / 3 + onlinePaymentService.interest(contract.getValueTotal() / 3, i)));
+            contract.setInstallment(new Installment(dueDate,
+                    onlinePaymentService.paymentFee(contract.getValueTotal() / months + onlinePaymentService.interest(contract.getValueTotal() / months, i))));
 
             contract.addInstalmentsList(contract.getInstallment());
         }
