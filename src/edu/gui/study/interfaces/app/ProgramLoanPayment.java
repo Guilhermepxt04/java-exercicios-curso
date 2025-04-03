@@ -2,7 +2,6 @@ package edu.gui.study.interfaces.app;
 
 import edu.gui.study.interfaces.model.services.BrazilInterestService;
 import edu.gui.study.interfaces.model.services.InterestService;
-
 import java.util.Locale;
 import java.util.Scanner;
 
