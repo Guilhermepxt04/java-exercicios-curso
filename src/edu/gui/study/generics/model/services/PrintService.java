@@ -3,6 +3,12 @@ package edu.gui.study.generics.model.services;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * Aula Sobre Generics delimitidaos
+ *
+ */
+
 public class PrintService <T> {
 
     private List<T> list = new ArrayList<>();

@@ -1,8 +1,13 @@
 package edu.gui.study.generics.app;
 
 import edu.gui.study.generics.model.services.PrintService;
-
 import java.util.Scanner;
+
+/**
+ *
+ * Aula sobre generics
+ *
+ */
 
 public class Program {
 
