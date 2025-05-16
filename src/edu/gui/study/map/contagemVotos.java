@@ -1,4 +1,4 @@
-package edu.gui.study.map.app;
+package edu.gui.study.map;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

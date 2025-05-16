@@ -1,4 +1,4 @@
-package edu.gui.study.set.app;
+package edu.gui.study.set;
 
 import java.util.Arrays;
 import java.util.Set;

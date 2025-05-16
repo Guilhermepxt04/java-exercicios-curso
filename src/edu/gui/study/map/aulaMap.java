@@ -1,4 +1,4 @@
-package edu.gui.study.map.app;
+package edu.gui.study.map;
 
 import java.util.Map;
 import java.util.TreeMap;

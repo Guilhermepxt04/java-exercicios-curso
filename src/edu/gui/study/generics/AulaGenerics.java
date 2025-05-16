@@ -1,4 +1,4 @@
-package edu.gui.study.generics.app;
+package edu.gui.study.generics;
 
 import edu.gui.study.generics.model.services.PrintService;
 import java.util.Scanner;
@@ -9,7 +9,7 @@ import java.util.Scanner;
  *
  */
 
-public class Program {
+public class AulaGenerics {
 
     public static void main(String[] args) {
 
