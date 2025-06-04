@@ -20,9 +20,8 @@ public class SumProduct {
         list.add(new Product("Tablet", 350.50));
         list.add(new Product("Hd Case", 80.90));
 
-        ProductService ps = new ProductService();
-
-        double sum = ps.filteredSum(list, product -> product.getName().charAt(0) == 'N');
+        double sum = ProductService.filteredSum(list, product -> product.getPrice() < 100.0); //usando uma função como parametro para
+        // filtrar a lista e não precisar acessar meu service para isso
 
         System.out.printf("Sum: %.2f", sum);
 

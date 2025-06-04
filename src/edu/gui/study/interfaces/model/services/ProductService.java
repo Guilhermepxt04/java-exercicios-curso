@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 
 public class ProductService {
 
-    public double filteredSum(List<Product> list, Predicate<Product> criteria) {
+    public static double filteredSum(List<Product> list, Predicate<Product> criteria) {
         double sum = 0.0;
         for (Product p : list) {
             if (criteria.test(p)) {
