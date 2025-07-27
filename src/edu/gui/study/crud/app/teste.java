@@ -1,4 +1,4 @@
-package edu.gui.study.exDatabase.app;
+package edu.gui.study.crud.app;
 
 import db.DB;
 
